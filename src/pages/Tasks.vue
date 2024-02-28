@@ -31,8 +31,13 @@ export default {
       deletePost(idPost) {
          this.posts = this.posts.filter(post => post.id !== idPost);
       },
-      saveEdit() {
-
+      saveEdit(editedPost) {
+         this.posts = this.posts.map(post => {
+            if (editedPost.id === post.id) {
+               return editedPost;
+            }
+            return post;
+         })
       }
    },
    mounted() {

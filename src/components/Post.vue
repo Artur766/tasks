@@ -46,7 +46,6 @@ export default {
             this.isEditing = true;
         },
         savePost() {
-            // Save the edited post and emit an event
             const editedPost = {
                 id: this.post.id,
                 title: this.editedTitle,
