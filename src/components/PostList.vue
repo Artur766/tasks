@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h3>Список пользователей</h3>
+        <h3 v-if="posts.length > 0">Спсиок задач</h3>
+        <h3 v-else>Задач пока нет</h3>
         <Post :post="post" v-for="post in posts" :key="post.id" @delete="deletePost" @save="saveEdit" />
     </div>
 </template>
@@ -10,6 +11,11 @@ import Post from './Post.vue';
 export default {
     components: {
         Post
+    },
+    data() {
+        return {
+
+        }
     },
     props: {
         posts: {
