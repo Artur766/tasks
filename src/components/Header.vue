@@ -118,9 +118,4 @@ export default {
    cursor: default;
    border: none;
 }
-
-
-
-
-
 </style>

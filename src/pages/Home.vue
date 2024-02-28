@@ -1,5 +1,7 @@
 <template>
-   <h1>dsa</h1>
+   <main class="main">
+      <h1 class="title">Добро пожаловать в задачник!</h1>
+   </main>
 </template>
 
 
@@ -9,20 +11,28 @@ export default {
    name: "Home",
    data() {
       return {
-        
+
       }
    },
    computed: {
-      
+
    },
    methods: {
-     
+
    },
    mounted() {
    }
 }
 </script>
 
-<style>
+<style scoped>
+main {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
+.title {
+   margin: 0 auto;
+}
 </style>
