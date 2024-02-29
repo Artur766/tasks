@@ -40,7 +40,7 @@ export default {
     },
     methods: {
         deletePost() {
-            this.$emit("delete", this.post.id);
+            this.$store.dispatch("deletePost", this.post.id);
         },
         editPost() {
             this.isEditing = true;
@@ -51,7 +51,7 @@ export default {
                 title: this.editedTitle,
                 body: this.editedBody,
             };
-            this.$emit("save", editedPost);
+            this.$store.dispatch("saveEdit", editedPost);
             this.isEditing = false;
         },
         cancelEdit() {

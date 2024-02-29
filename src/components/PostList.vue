@@ -2,7 +2,7 @@
     <div>
         <h3 v-if="posts.length > 0">Спсиок задач</h3>
         <h3 v-else>Задач пока нет</h3>
-        <Post :post="post" v-for="post in posts" :key="post.id" @delete="deletePost" @save="saveEdit" />
+        <Post :post="post" v-for="post in posts" :key="post.id"/>
     </div>
 </template>
 
@@ -12,24 +12,13 @@ export default {
     components: {
         Post
     },
-    data() {
-        return {
-
+    computed: {
+        posts() {
+            return this.$store.getters.getPosts;
         }
     },
-    props: {
-        posts: {
-            type: Array,
-            required: true,
-        }
-    },
-    methods: {
-        deletePost(idPost) {
-            this.$emit("delete", idPost)
-        },
-        saveEdit(editedPost) {
-            this.$emit("save", editedPost)
-        }
+    mounted() {
+       this.$store.dispatch("loadPostsFromLocalStorage");
     }
 }
 </script>
