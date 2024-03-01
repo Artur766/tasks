@@ -8,13 +8,13 @@ const routes = [
     component: Home
   },
   {
-    path: '/tasks',
+    path: '/view-tasks',
     component: Tasks
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory("/tasks/"),
+  history: createWebHistory("/tasks"),
   routes
 });
 

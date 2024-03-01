@@ -5,7 +5,7 @@
             <RouterLink :active-class="isActive && 'navigation__link_active'" to="/" class="navigation__link">
                Главная
             </RouterLink>
-            <RouterLink :active-class="isActive && 'navigation__link_active'" to="/tasks" class="navigation__link">
+            <RouterLink :active-class="isActive && 'navigation__link_active'" to="/view-tasks" class="navigation__link">
                Задачи
             </RouterLink>
          </nav>
