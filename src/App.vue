@@ -1,28 +1,29 @@
 <template>
     <div class="app">
-        <Header></Header>
-        <router-view />
+        <main class="main">
+            <SidebarMenu />
+            <router-view class="content" />
+        </main>
     </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import SidebarMenu from '@/components/layout/SidebarMenu.vue';
 export default {
-    components: {
-        Header,
-    }
+   components: {
+      SidebarMenu,
+   },
 }
 </script>
 
-<style >
+<style scoped>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-body {
-    background: black;
-    color: aliceblue;
+.main {
+    display: flex;
+    column-gap: 8px;
 }
 </style>

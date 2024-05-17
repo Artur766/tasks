@@ -3,9 +3,15 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     posts: [],
+    currentUser: {
+      name: 'Барнаби Мармадюк',
+      post: 'Преподователь',
+      photo: ''
+    }
   },
   getters: {
     getPosts: state => state.posts,
+    getCurrentUser: state => state.currentUser
   },
   mutations: {
     createPost(state, post) {

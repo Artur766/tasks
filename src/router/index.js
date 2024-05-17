@@ -1,20 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../pages/Home.vue';
-import Tasks from "../pages/Tasks.vue";
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '@/pages/Home.vue';
+import TrainingSessions from '@/components/specific/TrainingSessions.vue';
 
 const routes = [
   {
     path: '/',
-    component: Home
-  },
-  {
-    path: '/view-tasks',
-    component: Tasks
+    component: Home,
+    children: [
+      {
+        path: 'training-sessions',
+        component: TrainingSessions,
+      },
+    ]
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory("/tasks"),
+  history: createWebHashHistory("tasks"),
   routes
 });
 
