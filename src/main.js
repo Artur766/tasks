@@ -5,4 +5,6 @@ import store from './store';
 
 const app = createApp(App);
 
-app.use(store).use(router).mount('#app');
+store.dispatch('fetchCurrentUser').then(() => {
+  app.use(store).use(router).mount('#app');
+});

@@ -90,6 +90,7 @@ export default {
       this.$router.push(route);
     },
     getFirstWordName(fullnName) {
+      if (!fullnName) return;
       return fullnName.split(' ')[0][0] + fullnName.split(' ')[1][0];
     },
     handlerLogout() {
