@@ -1,16 +1,11 @@
 <template>
-   <main class="main">
-      <SidebarMenu />
-      <router-view class="content"/>
-   </main>
+  <router-view class="content" />
 </template>
-
 
 <script>
 export default {
-   name: "Home",
-}
+  name: 'Home',
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

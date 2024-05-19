@@ -1,9 +1,27 @@
 <template>
-   <div class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">&lt;</button>
-      <span v-for="page in pages" :key="page" @click="changePage(page)" :class="{ active: currentPage === page }">{{ page }}</span>
-      <button @click="nextPage" :disabled="currentPage === totalPages">&gt;</button>
-   </div>
+  <div class="pagination" v-if="pages.length > 1">
+    <button
+      style="margin-left: 16.25px"
+      class="pagination__button"
+      @click="prevPage"
+      :disabled="currentPage === 1"
+    ></button>
+    <span
+      class="pagination__span"
+      v-for="page in pages"
+      :key="page"
+      @click="changePage(page)"
+      :class="{ active: currentPage === page }"
+    >
+      {{ page }}
+    </span>
+    <button
+      style="rotate: 270deg"
+      class="pagination__button"
+      @click="nextPage"
+      :disabled="currentPage === totalPages"
+    ></button>
+  </div>
 </template>
 
 <script>
@@ -16,12 +34,12 @@ export default {
     itemsPerPage: {
       type: Number,
       default: 10,
-    }
+    },
   },
   data() {
     return {
       currentPage: 1,
-    }
+    };
   },
   computed: {
     totalPages() {
@@ -37,13 +55,29 @@ export default {
         if (this.currentPage <= 3) {
           pages = [1, 2, 3, 4, 5, '...', this.totalPages];
         } else if (this.currentPage >= this.totalPages - 2) {
-          pages = [1, '...', this.totalPages - 4, this.totalPages - 3, this.totalPages - 2, this.totalPages - 1, this.totalPages];
+          pages = [
+            1,
+            '...',
+            this.totalPages - 4,
+            this.totalPages - 3,
+            this.totalPages - 2,
+            this.totalPages - 1,
+            this.totalPages,
+          ];
         } else {
-          pages = [1, '...', this.currentPage - 1, this.currentPage, this.currentPage + 1, '...', this.totalPages];
+          pages = [
+            1,
+            '...',
+            this.currentPage - 1,
+            this.currentPage,
+            this.currentPage + 1,
+            '...',
+            this.totalPages,
+          ];
         }
       }
       return pages;
-    }
+    },
   },
   methods: {
     changePage(page) {
@@ -62,27 +96,11 @@ export default {
         this.currentPage++;
         this.$emit('pageChanged', this.currentPage);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
-.pagination {
-   display: flex;
-   align-items: center;
-}
-
-.pagination span {
-   margin: 0 5px;
-   cursor: pointer;
-}
-
-.pagination span.active {
-   font-weight: bold;
-}
-
-button:disabled {
-   cursor: not-allowed;
-}
+@import url(../../assets/styles/pagination.css);
 </style>

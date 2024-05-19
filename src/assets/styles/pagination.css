@@ -1,0 +1,63 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f7f9;
+  height: 52px;
+  column-gap: 8px;
+  border: 1px solid #e8eaec;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.pagination__button {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: #999999;
+  cursor: pointer;
+  background-image: url(../../assets/images/arrow.svg);
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  rotate: 90deg;
+}
+
+.pagination__span {
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  color: #2f3144;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  padding: 3px 0;
+  cursor: pointer;
+}
+
+.pagination__span:hover,
+.pagination__button:hover {
+  background-color: transparent;
+  border: 1px solid #3761f3;
+  color: #3761f3;
+}
+
+.pagination span.active {
+  background-color: #e0e0e0;
+}
+
+.pagination span.active:hover {
+  cursor: default;
+  color: #2f3144;
+  border: 1px solid white;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

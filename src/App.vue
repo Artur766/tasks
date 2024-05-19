@@ -1,29 +1,35 @@
 <template>
-    <div class="app">
-        <main class="main">
-            <SidebarMenu />
-            <router-view class="content" />
-        </main>
-    </div>
+  <div class="app">
+    <main class="main">
+      <SidebarMenu />
+      <router-view class="content" />
+    </main>
+  </div>
 </template>
 
 <script>
 import SidebarMenu from '@/components/layout/SidebarMenu.vue';
 export default {
-   components: {
-      SidebarMenu,
-   },
-}
+  components: {
+    SidebarMenu,
+  },
+};
 </script>
 
-<style scoped>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+<style>
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #f4f4f8;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .main {
-    display: flex;
-    column-gap: 8px;
+  display: flex;
+  column-gap: 8px;
 }
 </style>
