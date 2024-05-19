@@ -100,7 +100,6 @@ export default {
       this.isMenuOpen = !this.isMenuOpen;
     },
   },
-  mounted() {},
 };
 </script>
 

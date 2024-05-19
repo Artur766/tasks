@@ -13,6 +13,9 @@ export default {
   components: {
     SidebarMenu,
   },
+  created() {
+    this.$store.dispatch('fetchCurrentUser');
+  },
 };
 </script>
 

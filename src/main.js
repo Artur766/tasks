@@ -5,6 +5,4 @@ import store from './store';
 
 const app = createApp(App);
 
-store.dispatch('fetchCurrentUser').then(() => {
-  app.use(store).use(router).mount('#app');
-});
+app.use(store).use(router).mount('#app');
