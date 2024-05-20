@@ -5,6 +5,7 @@
   padding: 16px 24px;
   margin-right: 8px;
   width: 100%;
+  overflow: auto;
 }
 
 .head {
@@ -141,8 +142,8 @@ table tr:nth-child(even) {
 
 /* Стилизация полосы прокрутки */
 .table-container::-webkit-scrollbar {
-  height: max-content;
   width: 6px;
+  height: 6px;
   /* Ширина вертикальной полосы прокрутки */
 }
 
